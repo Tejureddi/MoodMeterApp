@@ -8,10 +8,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
+
     EditText emailET, passwordET;
-    //TextView authStatusTV;
+    TextView authStatusTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,22 +24,18 @@ public class MainActivity extends AppCompatActivity {
 
         emailET = findViewById(R.id.editTextEmail);
         passwordET = findViewById(R.id.editTextPass);
+        authStatusTV = findViewById(R.id.authText);
+        mAuth = FirebaseAuth.getInstance();
+
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            authStatusTV.setText("onStart reloaded and " + currentUser.getEmail() + " is logged in");
-            // Take any action needed here when screen loads and a user is logged in
-        }
-        else {
-            authStatusTV.setText("onStart reloaded and user is null");
-            // Take any action needed here when screen loads and a user is NOT logged in
-        }
-    }
+
+   /*
+   This method will get all user input and then based on the button chose, perform the
+   desired action.
+
+   https://stackoverflow.com/questions/13032333/droid-how-to-get-button-id-from-onclick-method-described-in-xml
+    */
 
     public void handleAuthChange(View v) {
         String email = emailET.getText().toString();
@@ -51,12 +51,18 @@ public class MainActivity extends AppCompatActivity {
                 //
                 signUp(email, password);
                 break;
-            case R.id.signOutButton:
-                //
-                signOut(email,password);
-                break;
         }
     }
+
+
+
+    public void signUp(String email, String password) {
+        authStatusTV.setText("Signed up");
+    }
+    public void signIn(String email, String password) {
+        authStatusTV.setText("Signed in");
+    }
+
 
 
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "353723718693",
+    "project_id": "moodmeteraccount",
+    "storage_bucket": "moodmeteraccount.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353723718693:android:9a49d6723bad66efdcf3cc",
+        "android_client_info": {
+          "package_name": "com.example.moodmeterapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353723718693-ks7o656i9l9f1ebqoj64nnlhdoqkf63t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCToWmAZn-Nb6rr8ju6utbnd6kjvM9pisY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353723718693-ks7o656i9l9f1ebqoj64nnlhdoqkf63t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
