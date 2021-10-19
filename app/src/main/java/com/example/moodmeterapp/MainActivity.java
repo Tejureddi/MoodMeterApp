@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             authStatusTV.setText("onStart reloaded and " + currentUser.getEmail() + " is logged in");
+            //Intent
             // Take any action needed here when screen loads and a user is logged in
         }
         else {
