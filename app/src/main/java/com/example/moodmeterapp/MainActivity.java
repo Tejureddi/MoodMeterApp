@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button signInButton;
     private FirebaseAuth mAuth;
 
     EditText emailET, passwordET;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        signInButton = (Button) findViewById(R.id.signInButton);
+        signInButton.setOnClickListener(this::handleAuthChange);
 
         emailET = findViewById(R.id.editTextEmail);
         passwordET = findViewById(R.id.editTextPass);
@@ -35,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
     }
+
+    /*@Override
+    public void onClick(){
+        Intent intent1 = new Intent(this, MoodPickerActivity.class);
+        this.startActivity(intent1);
+    }
+     */
+
 
     //each time this screen is started we will know if the user is signed in
     // (meaning the mAuth var is not null) and then we can update the screen accordingly.
@@ -69,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
         Log.i("Denna",  email + " " + password);
 
         switch (v.getId()) {
+            //case R.id.signInButton:
+                //startActivity(new Intent(this, MoodPickerActivity.class));
+                //break;
+
             case R.id.signInButton:
                 signIn(email, password);
                 //
