@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    private Button signInButton;
+    //private Button signInButton;
     private FirebaseAuth mAuth;
 
     EditText emailET, passwordET;
@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        signInButton = (Button) findViewById(R.id.signInButton);
-        signInButton.setOnClickListener(this::handleAuthChange);
+        //signInButton = (Button) findViewById(R.id.signInButton);
+        //signInButton.setOnClickListener(this::handleAuthChange);
 
         emailET = findViewById(R.id.editTextEmail);
         passwordET = findViewById(R.id.editTextPass);
@@ -39,12 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*@Override
-    public void onClick(){
-        Intent intent1 = new Intent(this, MoodPickerActivity.class);
-        this.startActivity(intent1);
-    }
-     */
 
 
     //each time this screen is started we will know if the user is signed in
@@ -56,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             authStatusTV.setText("onStart reloaded and " + currentUser.getEmail() + " is logged in");
-            //Intent
             // Take any action needed here when screen loads and a user is logged in
         }
         else {
@@ -80,10 +73,6 @@ public class MainActivity extends AppCompatActivity {
         Log.i("Denna",  email + " " + password);
 
         switch (v.getId()) {
-            //case R.id.signInButton:
-                //startActivity(new Intent(this, MoodPickerActivity.class));
-                //break;
-
             case R.id.signInButton:
                 signIn(email, password);
                 //
@@ -107,13 +96,15 @@ public class MainActivity extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.i("Denna", "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                authStatusTV.setText("Signed up " + user.getEmail() + " successfully");
+                                Intent intent = new Intent(MainActivity.this, MoodPickerActivity.class);
+                                startActivity(intent);
+                                //authStatusTV.setText("Signed up " + user.getEmail() + " successfully");
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.i("Denna", "createUserWithEmail:failure", task.getException());
                                 Toast.makeText(MainActivity.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
-                                authStatusTV.setText("Signed up - FAILED");
+                                //authStatusTV.setText("Signed up - FAILED");
                             }
                         }
                     });
@@ -131,7 +122,9 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.i("Denna", "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            authStatusTV.setText("Signed in " + user.getEmail());
+                            Intent intent1 = new Intent(MainActivity.this, MoodPickerActivity.class);
+                            startActivity(intent1);
+                            //authStatusTV.setText("Signed in " + user.getEmail());
                             //Intent intent1 = new Intent(this, FindLocation.class);
                             //this.startActivity(intent1);
 

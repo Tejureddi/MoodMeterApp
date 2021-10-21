@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoodMeterApp">
         <activity
+            android:name=".DisplayCalenderActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ResourcesActivity"
+            android:exported="true" />
+        <activity
             android:name=".MoodPickerActivity"
             android:exported="true" />
         <activity
