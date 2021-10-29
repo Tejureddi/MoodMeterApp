@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         //signInButton = (Button) findViewById(R.id.signInButton);
         //signInButton.setOnClickListener(this::handleAuthChange);
 
-        emailET = findViewById(R.id.editTextEmail);
-        passwordET = findViewById(R.id.editTextPass);
+        emailET = findViewById(R.id.emailEditText);
+        passwordET = findViewById(R.id.passwordEditText);
         authStatusTV = findViewById(R.id.authText);
         mAuth = FirebaseAuth.getInstance();
 
@@ -142,4 +142,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-}
+}  
