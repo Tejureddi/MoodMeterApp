@@ -12,6 +12,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
     private int month;
     private String key;
     private int year;
+    private int date;
 
     public static final Parcelable.Creator<Mood> CREATOR = new Parcelable.Creator<Mood>() {
 
@@ -31,18 +32,21 @@ public class Mood implements Parcelable, Comparable<Mood> {
         month = parcel.readInt();
         key = parcel.readString();
         year = parcel.readInt();
+        date = parcel.readInt();
     }
 
     public Mood() {
         color = "none";
         month = 0;
         year = 0;
+        date = 0;
     }
 
     public Mood (String color) {
         this.color = color;
         this.month = setParam("month");
         this.year = setParam("year");
+        this.date = setParam("date");
         key = "no key yet";
     }
 
@@ -80,19 +84,26 @@ public class Mood implements Parcelable, Comparable<Mood> {
         return year;
     }
 
+    public int getDate() {
+        return date;
+    }
+
     public String toString() {
-        return month + "/" + year + ": " + color + " (" + key + ")";
+        return date + "/" + month + "/" + year + ": " + color + " (" + key + ")";
     }
 
     public int setParam(String value) {
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        String date = sdf.format(new Date());
+        String dates = sdf.format(new Date());
         if (value.equals("month")) {
-            return Integer.parseInt(date.substring(3, 5));
+            return Integer.parseInt(dates.substring(3, 5));
         }
         else if (value.equals("year")) {
-            return Integer.parseInt(date.substring(6));
+            return Integer.parseInt(dates.substring(6));
+        }
+        else if(value.equals("date")) {
+            return Integer.parseInt(dates.substring(0, 2));
         }
         else {
             return -1;
