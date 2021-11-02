@@ -15,6 +15,7 @@ public class DisplayCalenderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_calender);
+        /*
         Intent intent = getIntent();
         myMoods = intent.getParcelableArrayListExtra(("keyMood"));
         // TESTING
@@ -22,6 +23,7 @@ public class DisplayCalenderActivity extends AppCompatActivity {
         for (int i = 0; i < myMoods.size(); i++) {
             System.out.println("1: " + myMoods.get(i));
         }
+         */
     }
 
 
