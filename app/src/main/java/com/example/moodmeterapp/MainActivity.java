@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
+        //user.getUid() --> to save user data
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             authStatusTV.setText("onStart reloaded and " + currentUser.getEmail() + " is logged in");
