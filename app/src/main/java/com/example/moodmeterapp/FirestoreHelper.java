@@ -4,6 +4,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
@@ -14,55 +15,69 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 
-
-
 public class FirestoreHelper {
 
-    private FirebaseFirestore db; // ref to entire database
+    private FirebaseFirestore db;
     private CollectionReference dataRef;
     private ArrayList<Mood> moodArrayList= new ArrayList<>();
 
+    // constructor
+
     public FirestoreHelper() {
+
+        // instantiate FirebaseFirestore object
+
         db = FirebaseFirestore.getInstance();
+
+        // determine where to save moods in database
+
         dataRef = db.collection("moods");
 
-        // This listener will listen for whenever the data is updated.  When that occurs, the arraylist
-        // is cleared out and it is refreshed with the updated data.
+        // Snapshot Listener refreshes data in array list
 
         dataRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                // clear out the array list so that none of the events are duplicated in the display
+
+                // clear array list
+
                 moodArrayList.clear();
 
-                // this for each loop will get each Document Snapshot from the query, and one at a time,
-                // convert them to an object of the Event class and then add them to the array list
+                // get documents from database and convert to mood objet
 
                 for (QueryDocumentSnapshot doc: value) {
                     Mood mood = doc.toObject(Mood.class);
                     moodArrayList.add(mood);
                 }
+
             }
+
         });
 
     }
 
+
     public void addMood(Mood mood) {
-        // use .add when you don't have a unique ID number for each document.  This will generate
-        // one for you.  If you did have a unique ID number, then you would use set.
+
+        // add mood to array list
+
         moodArrayList.add(mood);
+
+        // add mood to database
+
         db.collection("moods")
                 .add(mood) // adds an event without a key defined yet
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
-                    // documentReference contains a reference to the newly created Document if done successfully
                     public void onSuccess(DocumentReference documentReference) {
                         db.collection("moods").document(documentReference.getId())
-                                .update("key", documentReference.getId());  // sets the DocID key for the Event that was just added
+
+                                // sets key for newly added Mood objects
+
+                                .update("key", documentReference.getId());
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -72,6 +87,8 @@ public class FirestoreHelper {
                     }
                 });
     }
+
+    // returns array list of saved Mood objects
 
     public ArrayList<Mood> getMoodArrayList() {
         Collections.sort(moodArrayList);

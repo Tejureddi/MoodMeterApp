@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoodMeterApp">
         <activity
-            android:name=".DisplayCalenderActivity"
+            android:name=".DisplayCalendarActivity"
             android:exported="true" />
         <activity
             android:name=".ResourcesActivity"

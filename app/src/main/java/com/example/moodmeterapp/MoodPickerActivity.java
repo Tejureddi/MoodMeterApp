@@ -10,12 +10,17 @@ import java.util.ArrayList;
 
 public class MoodPickerActivity extends AppCompatActivity {
 
+    // FirestoreHelper Variable
+
     private FirestoreHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood_picker);
+
+        // instantiate FirestoreHelper variable
+
         dbHelper = new FirestoreHelper();
     }
 
@@ -46,13 +51,22 @@ public class MoodPickerActivity extends AppCompatActivity {
 
     public void goToCalendar(String color) {
 
+        // create a new mood object with color zone
+
         Mood mood = new Mood(color);
+
+        // add mood object to database
 
         dbHelper.addMood(mood);
 
-        Intent intent = new Intent(MoodPickerActivity.this, DisplayCalenderActivity.class);
+        // pass object to calendar activity using Parcelable and an intent
+
+        Intent intent = new Intent(MoodPickerActivity.this, DisplayCalendarActivity.class);
         ArrayList<Mood> moodToShow = dbHelper.getMoodArrayList();
         intent.putParcelableArrayListExtra("keyMood", moodToShow);
+
+        // start calendar activity
+
         startActivity(intent);
 
     }
