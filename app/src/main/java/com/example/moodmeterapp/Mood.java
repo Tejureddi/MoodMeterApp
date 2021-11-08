@@ -1,24 +1,24 @@
 package com.example.moodmeterapp;
 
-// The Mood Class saves a user's mood and data about that mood as an object.
-// The Mood Class implements Parcelable to send and receive objects between activities
-
-
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// The Mood Class saves a user's mood and data about that mood as an object.
+// The Mood Class implements Parcelable to send and receive objects between activities.
+
+
 public class Mood implements Parcelable, Comparable<Mood> {
 
     private String color; // color zone of mood (red, green, yellow, or blue)
     private int month; // month in which mood is recorded
     private String key; // key for storage in firebase
-    private int date; // date on which mood is recorded (23, 1, 15, etc)
     private int year; // year in which mood is recorded
+    private int date;
 
-    //Parcelable.CREATOR interface
+    //Parcelable.CREATOR interface (FIX THIS HERE)
 
     public static final Parcelable.Creator<Mood> CREATOR = new Parcelable.Creator<Mood>() {
 
@@ -59,7 +59,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
         this.month = setParam("month");
         this.year = setParam("year");
         key = "no key yet";
-        this.date = setParam("date");
+        date = setParam("date");
     }
 
     // constructor for mood objects that do have a key
@@ -102,22 +102,20 @@ public class Mood implements Parcelable, Comparable<Mood> {
         return month;
     }
 
-    // returns date on which mood was recorded
-
-    public int getDate() {
-        return month;
-    }
-
     // returns year in which mood was recorded
 
     public int getYear() {
         return year;
     }
 
+    public int getDate() {
+        return date;
+    }
+
     // returns String representation of mood objects
 
     public String toString() {
-        return month + "/" + date + "/" + year + ": " + color + " (" + key + ")";
+        return date + "/" + month + "/" + year + ": " + color + " (" + key + ")";
     }
 
     // sets month, year, and date attributes for Mood objects
@@ -148,17 +146,11 @@ public class Mood implements Parcelable, Comparable<Mood> {
             return Integer.parseInt(date.substring(6));
         }
 
-        // if parameter is "date"
-
         else if (value.equals("date")) {
-
-            // return date on which mood was recorded
-
-            return Integer.parseInt(date.substring(0, 2));
-
+            return Integer.parseInt(date.substring(0,2));
         }
 
-        // if parameter doesn't equal month, date, or year, return -1
+        // if parameter doesn't equal mood, date, or year, return -1 to show that value is invalid
 
         else {
             return -1;
@@ -172,3 +164,5 @@ public class Mood implements Parcelable, Comparable<Mood> {
     }
 
 }
+
+
