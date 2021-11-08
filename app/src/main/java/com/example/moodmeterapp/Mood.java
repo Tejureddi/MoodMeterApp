@@ -1,7 +1,7 @@
 package com.example.moodmeterapp;
 
 // The Mood Class saves a user's mood and data about that mood as an object.
-// The Mood Class implements Parcelable to send and receive objects between activities.
+// The Mood Class implements Parcelable to send and receive objects between activities
 
 
 import android.os.Parcel;
