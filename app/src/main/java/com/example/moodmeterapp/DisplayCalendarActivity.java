@@ -88,57 +88,65 @@ public class DisplayCalendarActivity extends AppCompatActivity {
 
     public void fillColorsArray(int[] array) {
 
-        // index keeps track of position in array of images
+        // new arraylist to hold moods for individual months
 
-        int index = 0;
+        ArrayList<Mood> month = new ArrayList<Mood>();
 
-        // loop through every mood in array of moods
-        // i keeps track of position in array of moods
+        // fill arraylist with moods for each month only
 
         for (int i = 0; i < myMoods.size(); i++) {
-
             Mood mood = myMoods.get(i);
-
-            // check if mood is in the current month and year
-
-            if (mood.getYear() == currentYear && mood.getMonth() == currentMonth) {
-
-                // if the mood is in the red zone, add red image to array of images
-
-                if (mood.getColor().equals("red")) {
-                    array[index] = R.drawable.red_mood;
-                }
-
-                // if the mood is in the orange zone, add red image to array of images
-
-                else if (mood.getColor().equals("yellow")) {
-                    array[index] = R.drawable.yellow_mood;
-                }
-
-                // if the mood is in the green zone, add red image to array of images
-
-                else if (mood.getColor().equals("green")) {
-                    array[index] = R.drawable.green_mood;
-                }
-
-                // if the mood is in the blue zone, add red image to array of images
-
-                else if (mood.getColor().equals("blue")) {
-                    array[index] = R.drawable.blue_mood;
-                }
-
-                // if the mood is not in any zone (for whatever reason), add white image to array of images
-
-                else {
-                    array[index] = R.drawable.empty_mood;
-                }
-
-                // add one to index (for array of images)
-
-                index++;
+            if (mood.getMonth() == currentMonth) {
+                month.add(mood);
             }
         }
+
+        // first for loop: loop through each day in month
+
+        for (int i = 1; i < 32; i++) {
+
+            // second for loop: loop through each mood in month
+
+            for (int j = 0; j < month.size(); j++) {
+
+                Mood m = month.get(j);
+
+                // if there is no mood recorded for that day
+
+                if (m.getDate() != i) {
+
+                    // fill day with white square (no color)
+
+                    array[i - 1] = R.drawable.empty_mood;
+                }
+
+                // if there is a mood recorded for that day
+
+                else {
+
+                    // fill day with corresponding color
+
+                    if (m.getColor().equals("red")) {
+                        array[i - 1] = R.drawable.red_mood;
+                    }
+
+                    // if the mood is in the orange zone, add red image to array of images
+
+                    else if (m.getColor().equals("yellow")) {
+                        array[i - 1] = R.drawable.yellow_mood;
+                    }
+
+                    // if the mood is in the green zone, add red image to array of images
+
+                    else if (m.getColor().equals("green")) {
+                        array[i - 1] = R.drawable.green_mood;
+                    }
+                }
+            }
+        }
+
     }
+
 
     // returns current date
 
