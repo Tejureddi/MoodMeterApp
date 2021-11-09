@@ -3,6 +3,9 @@ package com.example.moodmeterapp;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -17,6 +20,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
     private String key; // key for storage in firebase
     private int year; // year in which mood is recorded
     private int date;
+    private String user;
 
     //Parcelable.CREATOR interface (FIX THIS HERE)
 
@@ -41,6 +45,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
         year = parcel.readInt();
         key = parcel.readString();
         date = parcel.readInt();
+        user = parcel.readString();
     }
 
     // default constructor with no parameters
@@ -50,6 +55,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
         month = 0;
         year = 0;
         date = 0;
+        user = "none";
     }
 
     // constructor for mood objects without that don't have a key
@@ -60,6 +66,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
         this.year = setParam("year");
         key = "no key yet";
         date = setParam("date");
+        user = FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 
     // constructor for mood objects that do have a key
@@ -70,6 +77,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
         this.year = setParam("year");
         this.key = key;
         this.date = setParam("date");
+        user = FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 
     // The following methods are needed for Parcelable
@@ -80,6 +88,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
         dest.writeInt(year);
         dest.writeString(key);
         dest.writeInt(date);
+        dest.writeString(user);
     }
 
     public int compareTo(Mood other) {
@@ -110,6 +119,10 @@ public class Mood implements Parcelable, Comparable<Mood> {
 
     public int getDate() {
         return date;
+    }
+
+    public String getUser() {
+        return user;
     }
 
     // returns String representation of mood objects
@@ -160,7 +173,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
 
     // Mood objects are equal to one another if they are recorded on the same day
     public boolean equals (Mood other) {
-        return this.year == other.year && this.month == other.month && this.date == other.date;
+        return this.year == other.year && this.month == other.month && this.date == other.date && this.user == other.user;
     }
 
 }

@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -96,8 +98,9 @@ public class DisplayCalendarActivity extends AppCompatActivity {
 
         for (int i = 0; i < myMoods.size(); i++) {
             Mood mood = myMoods.get(i);
-            if (mood.getMonth() == currentMonth) {
+            if (mood.getMonth() == currentMonth && mood.getUser().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
                 month.add(mood);
+                System.out.println(mood);
             }
         }
 
@@ -111,7 +114,7 @@ public class DisplayCalendarActivity extends AppCompatActivity {
 
                 Mood m = month.get(j);
 
-                // if there is no mood recorded for that day
+                    // if there is no mood recorded for that day
 
                 if (m.getDate() != i) {
 
@@ -125,8 +128,11 @@ public class DisplayCalendarActivity extends AppCompatActivity {
                 else {
 
                     // fill day with corresponding color
+                    if (m.getColor().equals("blue")) {
+                        array[i - 1] = R.drawable.blue_mood;
+                    }
 
-                    if (m.getColor().equals("red")) {
+                    else if (m.getColor().equals("red")) {
                         array[i - 1] = R.drawable.red_mood;
                     }
 
@@ -142,6 +148,7 @@ public class DisplayCalendarActivity extends AppCompatActivity {
                         array[i - 1] = R.drawable.green_mood;
                     }
                 }
+
             }
         }
 
