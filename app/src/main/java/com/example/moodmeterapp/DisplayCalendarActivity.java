@@ -100,7 +100,7 @@ public class DisplayCalendarActivity extends AppCompatActivity {
             Mood mood = myMoods.get(i);
             if (mood.getMonth() == currentMonth && mood.getUser().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
                 month.add(mood);
-                System.out.println(mood);
+               System.out.println(mood);
             }
         }
 
@@ -116,39 +116,47 @@ public class DisplayCalendarActivity extends AppCompatActivity {
 
                     // if there is no mood recorded for that day
 
-                if (m.getDate() != i) {
+                //if (m.getDate() != i) {
 
                     // fill day with white square (no color)
 
-                    array[i - 1] = R.drawable.empty_mood;
-                }
+                    //array[i - 1] = R.drawable.empty_mood;
+                //}
 
                 // if there is a mood recorded for that day
 
-                else {
+                //else {
 
                     // fill day with corresponding color
                     if (m.getColor().equals("blue")) {
-                        array[i - 1] = R.drawable.blue_mood;
+                        array[j] = R.drawable.blue_mood;
                     }
 
                     else if (m.getColor().equals("red")) {
-                        array[i - 1] = R.drawable.red_mood;
+                        array[j] = R.drawable.red_mood;
                     }
 
                     // if the mood is in the orange zone, add red image to array of images
 
                     else if (m.getColor().equals("yellow")) {
-                        array[i - 1] = R.drawable.yellow_mood;
+                        array[j] = R.drawable.yellow_mood;
                     }
 
                     // if the mood is in the green zone, add red image to array of images
 
                     else if (m.getColor().equals("green")) {
-                        array[i - 1] = R.drawable.green_mood;
+                        array[j] = R.drawable.green_mood;
                     }
-                }
 
+
+                //}
+
+            }
+        }
+
+        for(int i = 0; i < 32; i++){
+            if(array[i] == 0){
+                array[i] = R.drawable.empty_mood;
             }
         }
 
