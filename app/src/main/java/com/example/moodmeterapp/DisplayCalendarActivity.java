@@ -112,51 +112,39 @@ public class DisplayCalendarActivity extends AppCompatActivity {
 
             for (int j = 0; j < month.size(); j++) {
 
-                Mood m = month.get(j);
+                if(month.get(j).getDate() == i) {
 
-                    // if there is no mood recorded for that day
-
-                //if (m.getDate() != i) {
-
-                    // fill day with white square (no color)
-
-                    //array[i - 1] = R.drawable.empty_mood;
-                //}
-
-                // if there is a mood recorded for that day
-
-                //else {
+                    Mood m = month.get(j);
 
                     // fill day with corresponding color
                     if (m.getColor().equals("blue")) {
-                        array[j] = R.drawable.blue_mood;
+                        array[i - 1] = R.drawable.blue_mood;
                     }
 
                     else if (m.getColor().equals("red")) {
-                        array[j] = R.drawable.red_mood;
+                        array[i - 1] = R.drawable.red_mood;
                     }
 
                     // if the mood is in the orange zone, add red image to array of images
 
                     else if (m.getColor().equals("yellow")) {
-                        array[j] = R.drawable.yellow_mood;
+                        array[i - 1] = R.drawable.yellow_mood;
                     }
 
                     // if the mood is in the green zone, add red image to array of images
 
                     else if (m.getColor().equals("green")) {
-                        array[j] = R.drawable.green_mood;
+                        array[i - 1] = R.drawable.green_mood;
                     }
 
+                    break;
 
-                //}
+                }
+                else {
+                    array[i - 1] = R.drawable.empty_mood;
+                    break;
+                }
 
-            }
-        }
-
-        for(int i = 0; i < 32; i++){
-            if(array[i] == 0){
-                array[i] = R.drawable.empty_mood;
             }
         }
 
