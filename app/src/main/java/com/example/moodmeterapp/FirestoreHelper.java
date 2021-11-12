@@ -95,4 +95,19 @@ public class FirestoreHelper {
         return moodArrayList;
     }
 
+    public boolean entryExists(Mood mood) {
+
+        boolean alreadyEntered = false;
+
+        for (int i = 0; i < moodArrayList.size(); i++) {
+            if (moodArrayList.get(i).equals(mood)) {
+                System.out.println("hey");
+                alreadyEntered = true;
+            }
+        }
+
+        return alreadyEntered;
+
+    }
+
 }

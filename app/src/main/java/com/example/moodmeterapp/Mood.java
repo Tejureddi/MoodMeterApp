@@ -173,7 +173,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
 
     // Mood objects are equal to one another if they are recorded on the same day
     public boolean equals (Mood other) {
-        return this.year == other.year && this.month == other.month && this.date == other.date && this.user == other.user;
+        return this.getYear() == other.getYear() && this.getMonth() == other.getMonth() && this.getDate() == other.getDate() && this.getUser() == other.getUser();
     }
 
 }

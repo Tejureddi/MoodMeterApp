@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -55,9 +56,15 @@ public class MoodPickerActivity extends AppCompatActivity {
 
         Mood mood = new Mood(color);
 
+        if (dbHelper.entryExists(mood)) {
+            Toast.makeText(MoodPickerActivity.this, "You've Already Recorded Your Mood Today", Toast.LENGTH_SHORT).show();
+        }
+
         // add mood object to database
 
-        dbHelper.addMood(mood);
+        else {
+            dbHelper.addMood(mood);
+        }
 
         // pass object to calendar activity using Parcelable and an intent
 
