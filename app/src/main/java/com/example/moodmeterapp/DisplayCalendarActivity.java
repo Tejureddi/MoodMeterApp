@@ -100,53 +100,53 @@ public class DisplayCalendarActivity extends AppCompatActivity {
             Mood mood = myMoods.get(i);
             if (mood.getMonth() == currentMonth && mood.getUser().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
                 month.add(mood);
-               System.out.println(mood);
             }
         }
 
         // first for loop: loop through each day in month
 
+
         for (int i = 1; i < 32; i++) {
+
+            Mood m = new Mood();
 
             // second for loop: loop through each mood in month
 
             for (int j = 0; j < month.size(); j++) {
 
-                if(month.get(j).getDate() == i) {
-
-                    Mood m = month.get(j);
-
-                    // fill day with corresponding color
-                    if (m.getColor().equals("blue")) {
-                        array[i - 1] = R.drawable.blue_mood;
-                    }
-
-                    else if (m.getColor().equals("red")) {
-                        array[i - 1] = R.drawable.red_mood;
-                    }
-
-                    // if the mood is in the orange zone, add red image to array of images
-
-                    else if (m.getColor().equals("yellow")) {
-                        array[i - 1] = R.drawable.yellow_mood;
-                    }
-
-                    // if the mood is in the green zone, add red image to array of images
-
-                    else if (m.getColor().equals("green")) {
-                        array[i - 1] = R.drawable.green_mood;
-                    }
-
-                    break;
-
-                }
-                else {
-                    array[i - 1] = R.drawable.empty_mood;
+                if (month.get(j).getDate() == i) {
+                    m = month.get(j);
                     break;
                 }
 
             }
+
+            if (m.getColor().equals("none")) {
+                array[i - 1] = R.drawable.empty_mood;
+            } else {
+
+                if (m.getColor().equals("blue")) {
+                    array[i - 1] = R.drawable.blue_mood;
+                } else if (m.getColor().equals("red")) {
+                    array[i - 1] = R.drawable.red_mood;
+                }
+
+                // if the mood is in the orange zone, add red image to array of images
+
+                else if (m.getColor().equals("yellow")) {
+                    array[i - 1] = R.drawable.yellow_mood;
+                }
+
+                // if the mood is in the green zone, add red image to array of images
+
+                else if (m.getColor().equals("green")) {
+                    array[i - 1] = R.drawable.green_mood;
+                }
+
+            }
+
         }
+
 
     }
 
@@ -233,5 +233,6 @@ public class DisplayCalendarActivity extends AppCompatActivity {
             return view;
         }
     }
-
 }
+
+
