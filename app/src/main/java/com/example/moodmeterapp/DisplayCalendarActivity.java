@@ -19,9 +19,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+
+// here is the tutorial I used for the gridview and custom adapter:
+// https://youtu.be/RtitGGmvvTI
+
+
 public class DisplayCalendarActivity extends AppCompatActivity {
 
-    // Arraylist of moods to receive from main activity
+    // Arraylist of moods to receive from mood picker activity
 
     private ArrayList<Mood> myMoods;
 
@@ -33,7 +38,7 @@ public class DisplayCalendarActivity extends AppCompatActivity {
 
     int[] colors = new int[32];
 
-    // calendar
+    // gridview variable (calendar)
 
     GridView gridView;
 
@@ -52,92 +57,127 @@ public class DisplayCalendarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_calender);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // receive array list from intent
+        // receive and instantiate array list from mood picker activity
 
         Intent intent = getIntent();
         myMoods = intent.getParcelableArrayListExtra(("keyMood"));
 
-
-        // fill calendar with colors
+        // fill the empty colors array with drawable files (each file corresponds to the color zone of a mood)
+        // this array will be used to put colors in the calendar
 
         fillColorsArray(colors);
 
-        // fill calendar with dates
+        // fill the empty dates array with "1", "2", "3", ... ,"31" for each day of the month
 
         fillDatesArray(dates);
 
-        // instantiate calendar
+        // instantiate gridview (calendar) variable
 
         gridView = (GridView) findViewById(R.id.calendar);
 
-        // create custom adapter variable
+        // create a custom adapter variable (see custom adapter class below)
 
         CustomAdapter customAdapter = new CustomAdapter(colors, dates, this);
 
-        // put custom adapter data in calendar
+        // fill the calendar with dates and colors using custom adapter variable
 
         gridView.setAdapter(customAdapter);
     }
 
-    // fills date array with 1-31 (WHAT ABOUT 30?)
+    // this method uses a for loop to fill date array with "1", "2", "3", ... , "31"
+
     public void fillDatesArray(String[] array) {
         for (int i = 1; i < 32; i++) {
             array[i - 1] = String.valueOf(i);
         }
     }
 
-    // fills image array with images corresponding to color zone
+    // this method fills colors array with drawable files
 
     public void fillColorsArray(int[] array) {
 
-        // new arraylist to hold moods for individual months
+        // this arraylist will contain all of the moods recorded in the current month
 
         ArrayList<Mood> month = new ArrayList<Mood>();
 
-        // fill arraylist with moods for each month only
+        // traverse ALL recorded moods
 
         for (int i = 0; i < myMoods.size(); i++) {
             Mood mood = myMoods.get(i);
-            if (mood.getMonth() == currentMonth && mood.getUser().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+
+            // if a mood is recorded in the current month by the current user, add the mood to "month" arraylist
+
+            if (mood.getMonth() == currentMonth && mood.getYear() == currentYear && mood.getUser().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
                 month.add(mood);
             }
+
         }
 
-        // first for loop: loop through each day in month
-
+        // for each day in the month
 
         for (int i = 1; i < 32; i++) {
 
+            // create new mood object
+            // this mood object calls default constructor, so it has no color zone
+
             Mood m = new Mood();
 
-            // second for loop: loop through each mood in month
+            // traverse array list of moods recorded in current month
 
             for (int j = 0; j < month.size(); j++) {
 
+                // if there is a mood recorded on day i
+
                 if (month.get(j).getDate() == i) {
+
+                    // set that mood equal to "m"
+                    // previously, "m" did not have a color zone because it was created using the default constructor
+                    // now, if a mood has been recorded on day i, "m" will have a color zone
+
                     m = month.get(j);
+
+                    // break out of for loop once a mood has been found for day i (for efficiency reasons)
+
                     break;
+
                 }
 
             }
 
+            // if "m" still doesn't have a color zone, that means that no mood has been recorded on day i
+
             if (m.getColor().equals("none")) {
+
+                // if no mood has been recorded, add a white colored image to the array of drawable files
+
                 array[i - 1] = R.drawable.empty_mood;
-            } else {
+
+            }
+
+            // if "m" has a color zone, a mood has been recorded on day i
+
+            else {
+
+                // use "i - 1" to fill array because i starts at 1 while arrays start at index 0
+                // if the recorded mood is in the blue zone, add a blue image to the array of drawable files
 
                 if (m.getColor().equals("blue")) {
                     array[i - 1] = R.drawable.blue_mood;
-                } else if (m.getColor().equals("red")) {
+                }
+
+                // if the recorded mood is in the red zone, add a red image to the array of drawable files
+
+                else if (m.getColor().equals("red")) {
                     array[i - 1] = R.drawable.red_mood;
                 }
 
-                // if the mood is in the orange zone, add red image to array of images
+                // if the recorded mood is in the yellow zone, add a yellow image to the array of drawable files
 
                 else if (m.getColor().equals("yellow")) {
                     array[i - 1] = R.drawable.yellow_mood;
                 }
 
-                // if the mood is in the green zone, add red image to array of images
+                // if the recorded mood is in the green zone, add a green image to the array of drawable files
 
                 else if (m.getColor().equals("green")) {
                     array[i - 1] = R.drawable.green_mood;
@@ -147,15 +187,13 @@ public class DisplayCalendarActivity extends AppCompatActivity {
 
         }
 
-
     }
 
-
-    // returns current date
+    // returns current month OR year
 
     public int getCurrentDate(String key) {
 
-        // get current date
+        // get current date using simple date format
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String date = sdf.format(new Date());
@@ -187,13 +225,21 @@ public class DisplayCalendarActivity extends AppCompatActivity {
     }
 
     // custom adapter class
+    // this is used to fill the gridview (calendar) with data
+    // a custom adapter is like a "bridge" that connects the calendar and the data in firebase
 
     public class CustomAdapter extends BaseAdapter {
+
+        // variables
 
         private String[] dates;
         private int[] colors;
         private Context context;
         private LayoutInflater layoutInflater;
+
+        // constructor
+        // this constructor is called in the onCreate()
+        // the actual parameters for this constructor are the arrays of dates and drawable files
 
         public CustomAdapter(int[] colors, String[] dates, Context context) {
             this.dates = dates;
@@ -221,13 +267,26 @@ public class DisplayCalendarActivity extends AppCompatActivity {
         public View getView(int i, View view, ViewGroup viewGroup) {
 
             if (view == null) {
+
+                // R.layout.day_in_calendar is a layout resource file
+                // it contains the design elements for a single day in the calendar
+                // each day consists of a textview (for the date) underneath an imageview (for the color)
+
                 view = layoutInflater.inflate(R.layout.day_in_calendar, viewGroup, false);
+
             }
+
+            // textview and imageview from R.layout.day_in_calendar
 
             TextView date = view.findViewById(R.id.date);
             ImageView color = view.findViewById(R.id.imageView);
 
+            // set text for textview with a number 1-31 from array of dates
+
             date.setText(dates[i]);
+
+            // set image resource for imageview with drawable file from array of drawable files
+
             color.setImageResource(colors[i]);
 
             return view;

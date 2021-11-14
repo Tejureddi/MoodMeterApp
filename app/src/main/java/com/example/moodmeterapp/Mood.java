@@ -19,10 +19,11 @@ public class Mood implements Parcelable, Comparable<Mood> {
     private int month; // month in which mood is recorded
     private String key; // key for storage in firebase
     private int year; // year in which mood is recorded
-    private int date;
-    private String user;
+    private int date; // day on which mood is recorded
+    private String user; // the id of the user who records the mood
 
-    //Parcelable.CREATOR interface (FIX THIS HERE)
+    // Parcelable.CREATOR interface
+    // this is used to send and receive mood objects between activities
 
     public static final Parcelable.Creator<Mood> CREATOR = new Parcelable.Creator<Mood>() {
 
@@ -58,7 +59,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
         user = "none";
     }
 
-    // constructor for mood objects without that don't have a key
+    // constructor for mood objects that don't have a key
 
     public Mood (String color) {
         this.color = color;
@@ -91,6 +92,8 @@ public class Mood implements Parcelable, Comparable<Mood> {
         dest.writeString(user);
     }
 
+    // compareTo(Mood other) returns zero because we didn't have to use this method while running our program
+
     public int compareTo(Mood other) {
         return 0;
     }
@@ -117,9 +120,13 @@ public class Mood implements Parcelable, Comparable<Mood> {
         return year;
     }
 
+    // returns day in which mood was recorded
+
     public int getDate() {
         return date;
     }
+
+    // returns id of user who recorded the mood
 
     public String getUser() {
         return user;
@@ -136,7 +143,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
 
     public int setParam(String value) {
 
-        // get current date
+        // get current date using simple date format
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String date = sdf.format(new Date());
@@ -163,7 +170,7 @@ public class Mood implements Parcelable, Comparable<Mood> {
             return Integer.parseInt(date.substring(0,2));
         }
 
-        // if parameter doesn't equal mood, date, or year, return -1 to show that value is invalid
+        // if parameter doesn't equal mood, date, or year, return -1
 
         else {
             return -1;
@@ -171,9 +178,12 @@ public class Mood implements Parcelable, Comparable<Mood> {
 
     }
 
-    // Mood objects are equal to one another if they are recorded on the same day
+    // Mood objects are equal to one another if they are recorded on the same day by the same user
+
     public boolean equals (Mood other) {
-        return this.getYear() == other.getYear() && this.getMonth() == other.getMonth() && this.getDate() == other.getDate() && this.getUser() == other.getUser();
+        System.out.println(this.getMonth());
+        System.out.println(other.getMonth());
+        return this.getYear() == other.getYear() && this.getMonth() == other.getMonth() && this.getDate() == other.getDate() && this.getUser().equals(other.getUser());
     }
 
 }
