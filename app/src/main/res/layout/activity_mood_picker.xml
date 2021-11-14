@@ -7,6 +7,20 @@
     android:background="#F3F2EE"
     android:backgroundTint="#F6F6F1">
 
+    <ImageButton
+        android:id="@+id/calendarButton2"
+        android:layout_width="78dp"
+        android:layout_height="69dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:drawable/ic_menu_today" />
+
     <Button
         android:id="@+id/button2"
         android:layout_width="114dp"
@@ -14,7 +28,6 @@
         android:backgroundTint="#FFEB3B"
         android:fontFamily="@font/caveat_brush"
         android:foregroundTint="#2196F3"
-        android:onClick="yellowButton"
         android:text="Yellow Zone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +43,6 @@
         android:backgroundTint="#F44336"
         android:fontFamily="@font/caveat_brush"
         android:foregroundTint="#2196F3"
-        android:onClick="redButton"
         android:text="Red Zone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +125,6 @@
         android:backgroundTint="#2196F3"
         android:fontFamily="@font/caveat_brush"
         android:foregroundTint="#2196F3"
-        android:onClick="blueButton"
         android:text="Blue Zone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,7 +140,6 @@
         android:backgroundTint="#4CAF50"
         android:fontFamily="@font/caveat_brush"
         android:foregroundTint="#2196F3"
-        android:onClick="greenButton"
         android:text="Green Zone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -159,8 +169,7 @@
         android:id="@+id/button3"
         android:layout_width="126dp"
         android:layout_height="47dp"
-        android:backgroundTint="#BAFFB5CE"
-        android:onClick="resourceButton"
+        android:backgroundTint="@color/pink"
         android:text="need help?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -170,4 +179,3 @@
         app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
