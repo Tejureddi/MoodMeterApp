@@ -74,11 +74,11 @@ public class MainActivity extends AppCompatActivity {
         Log.i("Denna",  email + " " + password);
 
         switch (v.getId()) {
-            case R.id.signin:
+            case R.id.signInButton:
                 signIn(email, password);
                 //
                 break;
-            case R.id.signup:
+            case R.id.signUpButton:
                 //
                 signUp(email, password);
                 break;
