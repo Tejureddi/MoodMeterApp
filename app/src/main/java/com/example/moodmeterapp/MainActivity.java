@@ -39,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void directionsClick(View view) {
+        Intent intent = new Intent(MainActivity.this, DirectionsPage.class);
+        startActivity(intent);
+
+
+    }
+
 
 
     //each time this screen is started we will know if the user is signed in

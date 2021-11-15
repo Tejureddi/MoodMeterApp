@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DirectionsPage">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="297dp"
+        android:layout_height="38dp"
+        android:text="Welcome to the Morning Mood Meter App!"
+
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="If you’re looking for a way to improve your emotional intelligence and develop a stronger sense of self-awareness, this is the perfect app for you.
+                                                                          Using our Morning Mood Meter, you can keep track of how you wake up feeling every day.
+To use this app, complete the following steps each day (preferably in the morning when you wake up):"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.236" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1) Log in or create a new account.
+                                                        2) Read the four mood zones and their descriptions.
+                     3) Click on the mood zone that best reflects how you are feeling.
+                                                                         4)Once you select a mood zone, you will be able to see a calendar that visually represents your mood zones each day.
+                         5)If you need additional support, click the “Resources” button underneath the four mood zones."
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463" />
+</androidx.constraintlayout.widget.ConstraintLayout>
