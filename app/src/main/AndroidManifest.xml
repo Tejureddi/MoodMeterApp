@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoodMeterApp">
         <activity
-            android:name=".SplashScreen"
-            android:exported="true" />
-        <activity
             android:name=".DisplayCalendarActivity"
             android:exported="true" />
         <activity
