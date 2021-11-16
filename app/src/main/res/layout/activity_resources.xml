@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="384dp"
-        android:layout_height="683dp"
+        android:layout_width="362dp"
+        android:layout_height="727dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/modak"
@@ -20,15 +20,13 @@
         android:textColor="@color/pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="356dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="361dp"
+        android:layout_height="40dp"
         android:autoText="true"
         android:background="#DFFF5722"
         android:backgroundTint="#FF5722"
@@ -39,14 +37,14 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="260dp"
+        android:layout_width="270dp"
         android:layout_height="140dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="32dp"
@@ -59,14 +57,14 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.602"
+        app:layout_constraintHorizontal_bias="0.613"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintVertical_bias="0.128" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="260dp"
+        android:layout_width="270dp"
         android:layout_height="190dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="32dp"
@@ -81,13 +79,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.603"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.777" />
 
     <TextView
         android:id="@+id/textView43"
-        android:layout_width="260dp"
-        android:layout_height="190dp"
+        android:layout_width="270dp"
+        android:layout_height="203dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="32dp"
         android:autoText="true"
@@ -97,26 +95,26 @@
         android:text="LGBT National Help Center: dedicated to providing mental health resources to members of the LGBTQ+ community. The website offers lists of books, movies and other forms of media  that bring attention to LGBT issues through a variety of genres. Users can also find a general hotline as well as hotlines specific to seniors and youth members of the community. Youth and peer chat rooms are also available for anyone looking for a safe space to talk. "
         android:textColor="@color/white"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.603"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.508" />
 
     <ImageButton
         android:id="@+id/calendarButton"
-        android:layout_width="78dp"
-        android:layout_height="69dp"
+        android:layout_width="70dp"
+        android:layout_height="62dp"
         android:backgroundTint="#00FFFFFF"
-        android:scaleType="fitCenter"
         android:onClick="imageCal2"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:drawable/ic_menu_today" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

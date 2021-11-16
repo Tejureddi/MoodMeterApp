@@ -10,18 +10,19 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="297dp"
-        android:layout_height="38dp"
+        android:layout_width="398dp"
+        android:layout_height="46dp"
         android:fontFamily="@font/modak"
 
-        android:text="Welcome to the MAD Mood Meter App!"
+        android:text="Welcome to the MAD Mood Meter!"
         android:textAlignment="center"
         android:textColor="#E91E63"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/textView15"
@@ -38,22 +39,23 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" />
+        app:layout_constraintVertical_bias="0.175" />
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="414dp"
+        android:layout_height="262dp"
         android:text="1) Log in or create a new account.
-                                                       2) Read the four mood zones and their descriptions.
-                    3) Click on the mood zone that best reflects how you are feeling.
+                                                                                2) Read the four mood zones and their descriptions.
+                                                                                3) Click on the mood zone that best reflects how you are feeling.
                                                                                     4)Once you select a mood zone, you will be able to see a calendar that visually represents your mood zones each day.
-                        5)If you need additional support, click the “Resources” button underneath the four mood zones."
+                                                           5)If you need additional support, click the “Resources” button underneath the four mood zones."
         android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.769" />
 </androidx.constraintlayout.widget.ConstraintLayout>
