@@ -57,11 +57,11 @@ public class MainActivity extends AppCompatActivity {
         //user.getUid() --> to save user data
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            authStatusTV.setText("onStart reloaded and " + currentUser.getEmail() + " is logged in");
+            authStatusTV.setText(currentUser.getEmail() + " is logged in");
             // Take any action needed here when screen loads and a user is logged in
         }
         else {
-            authStatusTV.setText("onStart reloaded and user is null");
+            authStatusTV.setText("User is not logged in");
             // Take any action needed here when screen loads and a user is NOT logged in
         }
     }

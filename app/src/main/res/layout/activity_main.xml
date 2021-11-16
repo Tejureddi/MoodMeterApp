@@ -112,7 +112,7 @@
         android:layout_height="120dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/modak"
-        android:text="MAD Mood Meter"
+        android:text="Morning Mood Meter"
         android:textAlignment="center"
         android:textColor="@color/pink"
         android:textSize="45sp"
