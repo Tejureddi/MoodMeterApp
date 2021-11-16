@@ -7,158 +7,116 @@
     android:background="#F6F6F1"
     android:backgroundTint="#F6F6F1">
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="85dp"
-        android:layout_height="37dp"
-        android:backgroundTint="#CDDC39"
-        android:text="Quotes"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="153dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#FBEF81"
-        android:text="Mad Mood Lab"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007" />
-
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="364dp"
-        android:layout_height="0dp"
+        android:layout_width="384dp"
+        android:layout_height="683dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/modak"
-        android:text="Resources"
+        android:shadowColor="#0E0E0E"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="85dp"
-        android:layout_height="37dp"
-        android:backgroundTint="#FF5722"
-        android:text="get help"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.806"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677" />
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="172dp"
-        android:layout_height="156dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/white"
+        android:layout_width="356dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
+        android:autoText="true"
+        android:background="#DFFF5722"
+        android:backgroundTint="#FF5722"
+        android:fontFamily="@font/anton"
         android:gravity="center"
-        android:text="                                                                                 We all have bad days. It's okay, we're here to help you."
+        android:text="MENTAL HEALTH RESOURCES"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.262" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="85dp"
-        android:layout_height="37dp"
-        android:backgroundTint="#FFC107"
-        android:text="breathe"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="85dp"
-        android:layout_height="37dp"
-        android:backgroundTint="#03A9F4"
-        android:text="games"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="174dp"
-        android:layout_height="319dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.898"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.366"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.083" />
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="171dp"
-        android:layout_height="124dp"
-        android:background="@color/white"
-        android:text="                                                            random game links"
-        android:textAlignment="center"
+        android:layout_width="260dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
+        android:autoText="true"
+        android:background="#FF5722"
+        android:backgroundTint="#00BCD4"
+        android:fontFamily="casual"
+        android:text="National Suicide Prevention Hotline: We can all help prevent suicide. The Lifeline provides 24/7, free and confidential support for people in distress, prevention and crisis resources for you or your loved ones, and best practices for professionals in the United States.  1-800-273-8255"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintHorizontal_bias="0.602"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.578" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="172dp"
-        android:layout_height="195dp"
-        android:background="@color/white"
-        android:text="                                                          auto generated quotes"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+        app:layout_constraintVertical_bias="0.18" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="163dp"
-        android:layout_height="192dp"
-        android:text="                                                           hotlines"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        android:layout_width="260dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
+        android:autoText="true"
+        android:background="#03A9F4"
+        android:backgroundTint="#FF9800"
+        android:fontFamily="casual"
+        android:text="Mentalhealth.gov  This website provides resources for people struggling with everything from anxiety disorders to psychotic disorders. The site also features guides for parents, educators and friends on how to talk about mental health and support their loved ones. It is a great place to find a variety of strategies and resources for helping to cope with mental illness."
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintHorizontal_bias="0.603"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintVertical_bias="0.842" />
 
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="260dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
+        android:autoText="true"
+        android:background="#FF5722"
+        android:backgroundTint="#E91E63"
+        android:fontFamily="casual"
+        android:text="LGBT National Help Center: dedicated to providing mental health resources to members of the LGBTQ+ community. The website offers lists of books, movies and other forms of media  that bring attention to LGBT issues through a variety of genres. Users can also find a general hotline as well as hotlines specific to seniors and youth members of the community. Youth and peer chat rooms are also available for anyone looking for a safe space to talk. "
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.603"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.473" />
+
+    <ImageButton
+        android:id="@+id/calendarButton"
+        android:layout_width="78dp"
+        android:layout_height="69dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:onClick="imageCal2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975"
+        app:srcCompat="@android:drawable/ic_menu_today" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

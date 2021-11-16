@@ -95,4 +95,11 @@ public class MoodPickerActivity extends AppCompatActivity {
 
     }
 
+    public void imageCal(View view) {
+        Intent intent = new Intent(MoodPickerActivity.this, DisplayCalendarActivity.class);
+        startActivity(intent);
+
+
+    }
+
 }

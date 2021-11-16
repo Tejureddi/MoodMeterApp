@@ -44,7 +44,7 @@
         android:layout_width="165dp"
         android:layout_height="170dp"
         android:background="#FF5722"
-        android:fontFamily="@font/caveat_brush"
+        android:fontFamily="casual"
         android:gravity="center"
         android:text="Angry                                                                    Scared                                            Panic                                                         Frustrated"
         android:textAlignment="center"
@@ -61,8 +61,8 @@
         android:layout_width="165dp"
         android:layout_height="170dp"
         android:background="#B42196F3"
-        android:fontFamily="@font/caveat_brush"
-        android:gravity= "center"
+        android:fontFamily="casual"
+        android:gravity="center"
         android:text="Sad                                                                    Tired                                            Sick                                                         Bored"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -78,7 +78,7 @@
         android:layout_width="165dp"
         android:layout_height="170dp"
         android:background="#FBED6D"
-        android:fontFamily="@font/caveat_brush"
+        android:fontFamily="casual"
         android:gravity="center"
         android:text="Excited                                                                    Anxious                                            Nervous                                                         Confused"
         android:textAlignment="center"
@@ -143,7 +143,7 @@
         android:layout_width="165dp"
         android:layout_height="170dp"
         android:background="#8BC34A"
-        android:fontFamily="@font/caveat_brush"
+        android:fontFamily="casual"
         android:gravity="center"
         android:text="Calm                                                                    Happy                                            I'm focused                                                         Feeling okay"
         android:textAlignment="center"
@@ -173,6 +173,7 @@
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="imageCal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.915"
@@ -182,4 +183,3 @@
         app:srcCompat="@android:drawable/ic_menu_today" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
