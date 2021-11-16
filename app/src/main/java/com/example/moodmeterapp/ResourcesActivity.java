@@ -14,10 +14,4 @@ public class ResourcesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resources);
     }
 
-    public void imageCal2(View view) {
-        Intent intent = new Intent(ResourcesActivity.this, DisplayCalendarActivity.class);
-        startActivity(intent);
-
-
-    }
 }

@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kekas/Documents/GitHub/MoodMeterApp/app/src/main/res/layout/activity_directions_page.xml" value="0.1" />
         <entry key="..\:/Users/kekas/Documents/GitHub/MoodMeterApp/app/src/main/res/layout/activity_display_calender.xml" value="0.1" />
         <entry key="..\:/Users/kekas/Documents/GitHub/MoodMeterApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/kekas/Documents/GitHub/MoodMeterApp/app/src/main/res/layout/activity_mood_picker.xml" value="0.1" />
+        <entry key="..\:/Users/kekas/Documents/GitHub/MoodMeterApp/app/src/main/res/layout/activity_resources.xml" value="0.5" />
         <entry key="..\:/Users/kekas/Documents/GitHub/MoodMeterApp/app/src/main/res/layout/day_in_calendar.xml" value="0.1" />
         <entry key="..\:/Users/kumar1048/Documents/GitHub/MoodMeterApp/app/src/main/res/layout/activity_display_calender.xml" value="0.1" />
         <entry key="..\:/Users/kumar1048/Documents/GitHub/MoodMeterApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -20,12 +22,6 @@
         <entry key="..\:/Users/thota/OneDrive/Documents/GitHub/firstRepo/MoodMeterApp/app/src/main/res/layout/activity_mood_picker.xml" value="0.1796875" />
         <entry key="..\:/Users/thota/OneDrive/Documents/GitHub/firstRepo/MoodMeterApp/app/src/main/res/layout/activity_resources.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/thota/OneDrive/Documents/GitHub/firstRepo/MoodMeterApp/app/src/main/res/layout/day_in_calendar.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_directions_page.xml" value="0.25885416666666666" />
-        <entry key="app/src/main/res/layout/activity_display_calender.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12588652482269502" />
-        <entry key="app/src/main/res/layout/activity_mood_picker.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_resources.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/day_in_calendar.xml" value="0.335" />
       </map>
     </option>
   </component>

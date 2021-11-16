@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -37,6 +39,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.175" />
@@ -45,13 +48,11 @@
         android:id="@+id/textView16"
         android:layout_width="414dp"
         android:layout_height="262dp"
-        android:text="1) Log in or create a new account.
-                                                                                2) Read the four mood zones and their descriptions.
-                                                                                3) Click on the mood zone that best reflects how you are feeling.
-                                                                                    4)Once you select a mood zone, you will be able to see a calendar that visually represents your mood zones each day.
-                                                           5)If you need additional support, click the “Resources” button underneath the four mood zones."
+        android:fontFamily="casual"
+        android:text="1) Log in or create a new account.\n2) Read the four mood zones and their descriptions.\nClick on the mood zone that best \nreflects how you are feeling.\n4) Once you select a mood zone, you will be able\n to see a calendar that visually represents\n your mood zones each day.\n5) If you need additional support, \nclick the “Resources” button \nunderneath the four mood zones."
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textSize="14sp"
+        android:textColor="@color/pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
@@ -59,3 +60,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.769" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
