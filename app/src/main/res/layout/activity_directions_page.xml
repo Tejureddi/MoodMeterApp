@@ -16,7 +16,7 @@
         android:layout_height="46dp"
         android:fontFamily="@font/modak"
 
-        android:text="Welcome to the MAD Mood Meter!"
+        android:text="Welcome to the Mood Meter!"
         android:textAlignment="center"
         android:textColor="#E91E63"
         android:textSize="24sp"
@@ -33,7 +33,7 @@
         android:background="#0800BCD4"
         android:backgroundTint="#0000BCD4"
         android:fontFamily="casual"
-        android:text="If you’re looking for a way to improve your emotional intelligence and develop a stronger sense of self-awareness, this is the perfect app for you.                                                                           Using our MAD Mood Meter, you can keep track of how feel every day. To use this app, complete the following steps"
+        android:text="If you’re looking for a way to improve your emotional intelligence and develop a stronger sense of self-awareness, this is the perfect app for you.                                                                           Using our Mood Meter, you can keep track of how feel every day. To use this app, complete the following steps"
         android:textAlignment="center"
         android:textColor="@color/pink"
         app:layout_constraintBottom_toBottomOf="parent"
