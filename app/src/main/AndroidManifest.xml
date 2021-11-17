@@ -23,7 +23,8 @@
         </activity>
         <activity
             android:name=".DisplayCalendarActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".MoodPickerActivity"/>
         <activity
             android:name=".ResourcesActivity"
             android:exported="true" />

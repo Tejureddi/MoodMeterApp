@@ -174,7 +174,7 @@ public class DisplayCalendarActivity extends AppCompatActivity {
                 // if the recorded mood is in the yellow zone, add a yellow image to the array of drawable files
 
                 else if (m.getColor().equals("yellow")) {
-                    array[i - 1] = R.drawable.yellow;
+                    array[i - 1] = R.drawable.yellow_mood;
                 }
 
                 // if the recorded mood is in the green zone, add a green image to the array of drawable files
