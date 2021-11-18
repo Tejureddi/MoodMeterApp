@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         emailET = findViewById(R.id.emailEditText);
         passwordET = findViewById(R.id.passwordEditText);
-        authStatusTV = findViewById(R.id.authText);
         mAuth = FirebaseAuth.getInstance();
 
     }
@@ -56,14 +55,7 @@ public class MainActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         //user.getUid() --> to save user data
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            authStatusTV.setText(currentUser.getEmail() + " is logged in");
-            // Take any action needed here when screen loads and a user is logged in
-        }
-        else {
-            authStatusTV.setText("User is not logged in");
-            // Take any action needed here when screen loads and a user is NOT logged in
-        }
+
     }
 
 
@@ -106,13 +98,11 @@ public class MainActivity extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Intent intent = new Intent(MainActivity.this, MoodPickerActivity.class);
                                 startActivity(intent);
-                                //authStatusTV.setText("Signed up " + user.getEmail() + " successfully");
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.i("Denna", "createUserWithEmail:failure", task.getException());
                                 Toast.makeText(MainActivity.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
-                                //authStatusTV.setText("Signed up - FAILED");
                             }
                         }
                     });
@@ -132,9 +122,6 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent1 = new Intent(MainActivity.this, MoodPickerActivity.class);
                             startActivity(intent1);
-                            //authStatusTV.setText("Signed in " + user.getEmail());
-                            //Intent intent1 = new Intent(this, FindLocation.class);
-                            //this.startActivity(intent1);
 
                         } else {
                             // If sign in fails, display a message to the user.
